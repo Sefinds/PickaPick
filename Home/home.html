@@ -201,9 +201,9 @@
       var user = JSON.parse(localStorage.getItem('users'));
 
       document.getElementById("username").textContent = (user.username);
-      document.getElementById("userimg").src = (user.pick);
-      document.getElementById('profil-box').style.backgroundColor = (user.pickcolor);
-      document.getElementById('profil-box').style.borderColor = (user.pickborder);
+      document.getElementById("userimg").src = (user.img);
+      document.getElementById('profil-box').style.backgroundColor = (user.imgcolor);
+      document.getElementById('profil-box').style.borderColor = (user.bordercolor);
     };
 
     console.log(myFunction())
