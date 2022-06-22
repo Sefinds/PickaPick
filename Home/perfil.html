@@ -154,11 +154,11 @@
 
       var user = JSON.parse(localStorage.getItem('users'));
       document.getElementById("username").textContent = (user.username);
-      document.getElementById("userimg").src = (user.pick);
-      document.getElementById('profil-box').style.backgroundColor = (user.pickcolor);
+      document.getElementById("userimg").src = (user.img);
+      document.getElementById('profil-box').style.backgroundColor = (user.imgcolor);
       document.getElementById('profil-box').style.borderColor = (user.bordercolor);
-      document.getElementById('back').style.backgroundColor = (user.pickcolor);
-      document.getElementById('descriptionbox').style.backgroundColor = (user.pickcolor);
+      document.getElementById('back').style.backgroundColor = (user.imgcolor);
+      document.getElementById('descriptionbox').style.backgroundColor = (user.imgcolor);
     };
 
     console.log(myFunction())
