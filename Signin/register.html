@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="../manifest.json">
+  <!--Links-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylegeral.css">
+  <title>register</title>
+  <style media="screen">
+  .social-box {
+    width: 69px;
+    height: 50px;
+    background: rgba(196, 196, 196, 0);
+    opacity: 1;
+    border: 1px solid rgba(117, 117, 117, 1);
+    border-radius: 9px;
+    overflow: hidden;
+  }
+  </style>
+</head>
+
+<body data-title="register">
+  <div class="wrapper-1">
+
+    <div class="wrapper-3">
+      <div class="wrapperitem-3">
+        <a href="../index.html">
+          <img src="../img/back.png" alt="HTML tutorial" style="width:30px;height:30px;">
+        </a>
+      </div>
+    </div>
+
+    <div class="wrapperitem-1">
+        <span class="text_Display" style="font-size: 32px;">Welcome!</span><br>
+        <span class="text_rounded" style="font-weight: Regular; font-size: 20px;color:rgba(0, 0, 0, 0.46000000834465027);">Create an account, Its free.</span>
+    </div><br><br>
+
+
+    <div class="wrapperitem-1">
+      <div class="input">
+          <input type="text" class="input-line" id="email" name="email" placeholder="Email" required>
+        </div>
+      </div>
+
+      <div class="wrapperitem-1">
+        <div class="input">
+          <input type="text" class="input-line" id="password" name="password" placeholder="Password" required>
+        </div>
+      </div>
+
+      <div class="wrapperitem-1">
+        <div class="input">
+          <input type="text" class="input-line" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+        </div>
+      </div><br><br><br>
+
+
+      <div class="wrapperitem-1">
+        <a class="register" id="register">
+          <div class="button-caixa">
+            <div class="button-cor" style="background: rgba(165, 213, 213, 0.8100000023841858);">
+              <span class="button-text" style="line-height: 50px;">Register</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="wrapperitem-1">
+        <span class="text_rounded" style="font-weight: Regular; font-size: 15px;color: rgba(106, 106, 106, 1);">
+          <img src="../img/line 4.png" alt=""></img>
+          or continue with
+          <img src="../img/line 5.png" alt=""></img>
+        </span>
+
+        <div class="wrapper-ok">
+          <div class="wrapperitem-ok"></div>
+          <div class="wrapperitem-ok">
+            <a href="" class="google">
+              <div class="social-box">
+                <img src="../img/google.png" style="width: 55px; height: 40px;" alt="">
+              </div>
+            </a>
+          </div>
+
+          <div class="wrapperitem-ok">
+            <a href="" class="facebook">
+              <div class="social-box">
+                <img src="../img/facebook.png" style="width: 39px;height: 39px;" alt="">
+              </div>
+            </a>
+          </div>
+
+          <div class="wrapperitem-ok">
+            <a href="" class="apple">
+              <div class="social-box">
+                <img src="../img/apple.png" style="" alt="">
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapperitem-1">
+        <div class="text_rounded" style="font-weight: Regular; font-size: 15px;">
+          <p>Already have an account?<a href="login.html">  Log in</a></p>
+          <p>Don’t want an account? <a href="../guest/guestregister.html">Play as a Guest</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="../firebase.js" type="module"></script>
+
+  <script type="module">
+  import{auth, db} from "../firebase.js";
+  import { createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+  import {collection,addDoc, doc, setDoc} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";      //register
+
+sessionStorage.clear();
+
+          register.addEventListener('click',(e) => {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('confirm_password').value;
+            var confirm_password = document.getElementById('password').value;
+
+      if (password == confirm_password) {
+          createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              // Signed in
+              const user = userCredential.user;
+              var userid = userCredential.user.uid;
+
+              var ref = doc(db, "Users", userid);
+              //console.log(Users.data());
+               setDoc(
+                ref, {
+                  email: email,
+                  password: password
+                }
+              )
+
+                      .then(()=>{
+                        alert("data added sucessfully");
+                        window.location.href = "register1.html";
+                      })
+                      .catch((error)=>{
+                        alert("Unsuccessuful operation, error:"+ error);
+                      });
+
+                      alert('User created!');
+                    })
+
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                alert(errorMessage);
+                // ..
+              });
+            }else{
+              alert("Passwords do not match");
+            };
+        });
+
+  </script>
+
+  <script src="../main.js"></script>
+
+</body>
+</html>

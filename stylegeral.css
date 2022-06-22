@@ -1,0 +1,219 @@
+html,
+body{
+  background-color: rgba(255, 252, 247, 1);
+
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   margin: 0;
+}
+/*body {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}*/
+a{
+  text-decoration: none;
+}
+.wrapper-1 {
+  display: grid;
+  grid-template-columns: auto;
+}
+.wrapperitem-1 {
+  padding: 25px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-2 {
+  display: grid;
+  grid-template-columns: 20% 30% 30%;
+}
+.wrapperitem-2 {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-3 {
+  display: grid;
+  grid-template-columns: 16% 70% 20%;
+}
+.wrapperitem-3 {
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.wrapper-4 {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+}
+.wrapperitem-4 {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.wrapperitem-5 {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-go {
+  display: grid;
+  grid-template-columns: 10% 20% 20%;
+}
+.wrapperitem-go {
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-idk {
+  display: grid;
+  grid-template-columns: 5% 45% 50%;
+}
+.wrapperitem-idk {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-ok {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.wrapperitem-ok {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-gogo {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.wrapperitem-gogo {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-tre {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.wrapperitem-tre {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+/*text style*/
+.text_Display {
+  color: rgba(0, 0, 0, 1);
+  font-family: SF Pro Display;
+  font-weight: Medium;
+  font-size: 24px;
+  text-align: center;
+}
+.text_rounded {
+  color: rgba(0, 0, 0, 1);
+  font-family: SF Pro Rounded;
+  font-weight: Medium;
+}
+
+
+
+/*minibox games style*/
+.miniboxtext {
+  width: 86px;
+  color: rgba(0, 0, 0, 1);
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 15px;
+  text-align: center;
+}
+
+.miniboximg {
+  width: 53px;
+  height: 53px;
+}
+
+.minibox {
+  height: 132px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 25px;
+}
+
+.miniboxcolor {
+  height: 128px;
+  border-radius: 25px;
+}
+
+
+
+/*button style*/
+.button-caixa {
+  height: 51px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 32px;
+}
+
+.button-cor {
+  height: 47px;
+  border-radius: 32px;
+}
+
+.button-text {
+  color: rgba(0, 0, 0, 1);
+  font-family: SF Pro Rounded;
+  font-weight: Regular;
+  font-size: 24px;
+  text-align: center;
+}
+
+
+
+/*unput style*/
+.input {
+  color: rgba(0, 0, 0, 0.6299999952316284);
+  font-family: SF Pro Rounded;
+  font-weight: Regular;
+  font-size: 20px;
+  text-align: center;
+}
+
+.input-line {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.63);
+  outline: none;
+  outline-style: none;
+  outline-offset: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid rgba(0, 0, 0, 0.63) 2px;
+  padding: 3px 10px;
+}
+
+
+
+/*button picks*/
+button{
+  width: 101px;
+  height: 102px;
+  border: 4px solid;
+  border-radius: 32px;
+}

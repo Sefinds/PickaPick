@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="../../manifest.json">
+  <script src="../../main.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../../stylegeral.css">
+  <title>chooseop</title>
+  <style>
+    .mao1 {
+      width: 75px;
+      height: 82px;
+      background: url("../images/v395_1727.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 311px;
+      left: 70px;
+      overflow: hidden;
+    }
+
+    .mao2 {
+      width: 58px;
+      color: url("../images/v395_1728.png");
+      position: absolute;
+      top: 675px;
+      left: 158px;
+      font-family: Playfair Display;
+      font-weight: Regular;
+      font-size: 30px;
+      opacity: 1;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body onload="myFunction()">
+  <br>
+  <div class="wrapper-tre">
+    <div class="wrapperitem-tre">
+      <a href="../../Home/home.html">
+        <img src="../../img/back.png" alt="HTML tutorial" style="width:30px;height:30px;">
+      </a>
+    </div>
+
+    <div class="wrapperitem-tre">
+      <span class="text_Display" style="font-size: 24px;">Tic-Tac-Toe</span>
+    </div>
+  </div><br><br>
+
+  <div class="wrapper-tre">
+    <div class="wrapperitem-tre"></div>
+    <div class="wrapperitem-tre">
+      <div style="height: 61px;background: rgba(243, 177, 205, 1);border-radius: 12px;">
+        <div style="height: 61px;border: 1px solid rgba(0, 0, 0, 1);border-radius: 12px;">
+          <span class="text_Display" style="font-weight: Regular;font-size: 19px;">Pick your <br> opponent</span>
+          <!--  <div class="mao1"></div>
+          <div class="mao2"></div>-->
+        </div>
+      </div>
+    </div>
+  </div><br><br><br>
+
+  <div class="wrapper-tre">
+    <div class="wrapperitem-tre">
+      <button id="profil-box">
+        <img src="" id="userimg" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+
+    <div class="wrapperitem-tre">
+      <br><img src="https://firebasestorage.googleapis.com/v0/b/picks-5fe86.appspot.com/o/Picks%2Fvs.png?alt=media&token=5061d9fe-dfe6-445b-8dc2-8514bed8f743" alt="" style="width: 46px;height: 46px;">
+    </div>
+    <div class="wrapperitem-tre">
+      <button id="vs" style="background:none; border-color: rgba(243, 177, 205, 1);">
+        <img id="vsv" src="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+  </div><br><br><br>
+
+  <div class="wrapper-tre">
+    <div class="wrapperitem-tre">
+      <button id="1" style="background:none; border-color: rgba(243, 177, 205, 1);">
+        <img id="bot" src="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+
+    <div class="wrapperitem-tre">
+      <button id="2" style="border-color: rgba(243, 177, 205, 1);">
+        <img id="bubble" src="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+
+    <div class="wrapperitem-tre">
+      <button id="3" style="background:none; border-color: rgba(243, 177, 205, 1);">
+        <img id="miss" src="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+
+    <div class="wrapperitem-tre">
+      <button id="4" style="background:none; border-color: rgba(243, 177, 205, 1);">
+        <img id="poop" src="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+
+    <div class="wrapperitem-tre">
+      <button id="5" style="background:none; border-color: rgba(243, 177, 205, 1);">
+        <img id="blue" src="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+
+    <div class="wrapperitem-tre">
+      <button id="6" style="background:none; border-color: rgba(243, 177, 205, 1);">
+        <img id="rob" src="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+  </div><br><br><br>
+
+  <!--<div class="v395_1727"></div><span class="v395_1728">..</span>-->
+  <div class="wrapper-1">
+    <div class="wrapperitem-1">
+      <a id="next" class="next">
+        <div class="button-caixa">
+          <div class="button-cor" style="background: rgba(243, 177, 205, 1);">
+            <span class="button-text">Next</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script src="../../firebase.js" type="module"></script>
+
+  <script type="module">
+    import {
+      auth,
+      user,
+      db
+    } from "../../firebase.js";
+    import {
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+    import {
+      collection,
+      addDoc,
+      doc,
+      setDoc,
+      updateDoc,
+      getDocs,
+      onSnapshot,
+      getDoc
+    } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
+    import {
+      getStorage,
+      ref,
+      uploadBytesResumable,
+      getDownloadURL,
+      getMetadata
+    } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js";
+
+
+    function myFunction() {
+
+      const storage = getStorage();
+
+      const bott = doc(db, 'Picks', 'Bot');
+      getDoc(bott).then(bot => {
+        if (bot.exists()) {
+          //localStorage.setItem('Picks', JSON.stringify(pinki.data()));
+          const botdoc = document.getElementById('bot');
+          botdoc.setAttribute('src', bot.data().img);
+          document.getElementById('1').style.backgroundColor = (bot.data().imgcolor);
+          document.getElementById('1').style.borderColor = (bot.data().bordercolor);
+          document.getElementById("1").addEventListener('click', (e) => {
+                sessionStorage.setItem('VS', JSON.stringify(bot.data()));
+                var vs = JSON.parse(sessionStorage.getItem('VS'));
+                document.getElementById("vsv").src = (vs.img);
+                document.getElementById('vs').style.backgroundColor = (vs.imgcolor);
+          });
+
+        } else {
+          console.log('Este produto nao existe.');
+        }
+      });
+
+      const bubble = doc(db, 'Picks', 'Bubble');
+      getDoc(bubble).then(bubb => {
+        if (bubb.exists()) {
+          const bubbleimg = document.getElementById('bubble');
+          bubbleimg.setAttribute('src', bubb.data().img);
+          document.getElementById('2').style.backgroundColor = (bubb.data().imgcolor);
+          document.getElementById("2").addEventListener('click', (e) => {
+            sessionStorage.setItem('VS', JSON.stringify(bubb.data()));
+            var vs = JSON.parse(sessionStorage.getItem('VS'));
+            document.getElementById("vsv").src = (vs.img);
+            document.getElementById('vs').style.backgroundColor = (vs.imgcolor);
+          });
+        } else {
+          console.log('Este produto nao existe.');
+        }
+      });
+
+      const miss = doc(db, 'Picks', 'Miss');
+      getDoc(miss).then(mis => {
+        if (mis.exists()) {
+          const missimg = document.getElementById('miss');
+          missimg.setAttribute('src', mis.data().img);
+          document.getElementById('3').style.backgroundColor = (mis.data().imgcolor);
+          document.getElementById("3").addEventListener('click', (e) => {
+            sessionStorage.setItem('VS', JSON.stringify(mis.data()));
+            var vs = JSON.parse(sessionStorage.getItem('VS'));
+            document.getElementById("vsv").src = (vs.img);
+            document.getElementById('vs').style.backgroundColor = (vs.imgcolor);
+          });
+        } else {
+          console.log('Este produto nao existe.');
+        }
+      });
+
+      const poop = doc(db, 'Picks', 'Poop');
+      getDoc(poop).then(poo => {
+        if (poo.exists()) {
+          const poopimg = document.getElementById('poop');
+          poopimg.setAttribute('src', poo.data().img);
+          document.getElementById('4').style.backgroundColor = (poo.data().imgcolor);
+          document.getElementById("4").addEventListener('click', (e) => {
+            sessionStorage.setItem('VS', JSON.stringify(poo.data()));
+            var vs = JSON.parse(sessionStorage.getItem('VS'));
+            document.getElementById("vsv").src = (vs.img);
+            document.getElementById('vs').style.backgroundColor = (vs.imgcolor);
+          });
+        } else {
+          console.log('Este produto nao existe.');
+        }
+      });
+
+      const blue = doc(db, 'Picks', 'Blue');
+      getDoc(blue).then(blu => {
+        if (blu.exists()) {
+          const blueimg = document.getElementById('blue');
+          blueimg.setAttribute('src', blu.data().img);
+          document.getElementById('5').style.backgroundColor = (blu.data().imgcolor);
+          document.getElementById("5").addEventListener('click', (e) => {
+            sessionStorage.setItem('VS', JSON.stringify(blu.data()));
+            var vs = JSON.parse(sessionStorage.getItem('VS'));
+            document.getElementById("vsv").src = (vs.img);
+            document.getElementById('vs').style.backgroundColor = (vs.imgcolor);
+          });
+        } else {
+          console.log('Este produto nao existe.');
+        }
+      });
+
+      const rob = doc(db, 'Picks', 'Rob');
+      getDoc(rob).then(ro => {
+        if (ro.exists()) {
+          const robimg = document.getElementById('rob');
+          robimg.setAttribute('src', ro.data().img);
+          document.getElementById('6').style.backgroundColor = (ro.data().backgroundColor);
+          document.getElementById("6").addEventListener('click', (e) => {
+            sessionStorage.setItem('VS', JSON.stringify(ro.data()));
+            var vs = JSON.parse(sessionStorage.getItem('VS'));
+            document.getElementById("vsv").src = (vs.img);
+            document.getElementById('vs').style.backgroundColor = (vs.imgcolor);
+          });
+        } else {
+          console.log('Este produto nao existe.');
+        }
+      });
+
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          console.log('user logged');
+          const uid = user.uid;
+        } else {
+          console.log('User is signed out');
+        }
+      });
+
+
+
+
+      var user = JSON.parse(localStorage.getItem('users'));
+      document.getElementById("userimg").src = (user.pick);
+      document.getElementById('profil-box').style.backgroundColor = (user.pickcolor);
+      document.getElementById('profil-box').style.borderColor = (user.pickborder);
+    };
+    console.log(myFunction())
+    window.myFunction = myFunction;
+
+
+    document.getElementById("next").addEventListener('click', (e) => {
+      window.location.href = "expli.html";
+    });
+  </script>
+</body>
+
+</html>

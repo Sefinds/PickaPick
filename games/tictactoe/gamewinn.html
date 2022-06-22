@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="../../manifest.json">
+  <script src="../../main.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../../stylegeral.css">
+  <title>chooseop</title>
+</head>
+
+<body style="background: rgba(243, 177, 205, 1);">
+  <div class="wrapper-1"><br><br><br><br><br><br>
+
+    <div class="wrapperitem-1" style="width: 344px;height: 666px;background: rgba(255, 255, 255, 1);border-radius: 27px;">
+      <div class="wrapperitem-1">
+        <a href="../../Home/home.html" class="v495_3145">
+          <div class="v495_3146">
+            <img src="../../img/back.png" alt=""><span>Go Home</span>
+          </div>
+          <div class="v495_3147"></div>
+        </a>
+
+        <a href="game.html" class="v495_3145">
+          <div class="v495_3146">
+            <img src="../../img/back.png" alt=""><span>Play again</span>
+          </div>
+          <div class="v495_3147"></div>
+        </a>
+
+<br><br>
+
+        <span>Winner is:</span><br>
+        <span id="winner"></span>
+      </div>
+    </div>
+
+  </div>
+
+
+<script>
+var winn = JSON.parse(sessionStorage.getItem('winner'));
+document.getElementById("winner") = winn.data;
+
+
+</script>
+</body>
+</html>

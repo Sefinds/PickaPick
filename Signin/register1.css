@@ -1,0 +1,141 @@
+.wrapper-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.wrapperitem-1 {
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.wrapper-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.wrapperitem-2 {
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+  .wrapper-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .wrapper-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+/* Medium devices (tablets, 768px and up) the navbar toggle appears at this breakpoint */
+@media only screen and (min-width: 768px) {
+  .wrapper-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .wrapper-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .wrapper-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .wrapper-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+
+body{
+      background: rgba(255, 252, 247, 1);
+}
+
+button{
+  width: 101px;
+  height: 102px;
+  border: 4px solid;
+  border-radius: 32px;
+}
+
+.titulo {
+  width: 221px;
+  color: rgba(0, 0, 0, 1);
+  font-family: SF Pro Display;
+  font-weight: Medium;
+  font-size: 30px;
+  opacity: 1;
+}
+
+.subtitulo {
+  width: 260px;
+  color: rgba(0, 0, 0, 0.699999988079071);
+  font-family: SF Pro Rounded;
+  font-weight: Regular;
+  font-size: 20px;
+}
+
+.text-line {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.63);
+  outline: none;
+  outline-style: none;
+  outline-offset: 0;
+  border: none;
+  border-bottom: solid rgba(0, 0, 0, 0.63) 2px;
+  padding: 3px 10px;
+}
+
+.username {
+  color: rgba(0, 0, 0, 0.6299999952316284);
+  font-family: SF Pro Rounded;
+  font-weight: Regular;
+  font-size: 20px;
+}
+
+.letsgo {
+  width: 306px;
+  height: 55px;
+}
+
+.letsgo-color {
+  height: 51px;
+  background: rgba(165, 213, 213, 0.8100000023841858);
+  border-radius: 32px;
+}
+
+.letsgo-box {
+  height: 51px;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 32px;
+}
+
+.letsgo-text {
+  color: rgba(0, 0, 0, 1);
+  font-family: SF Pro Rounded;
+  font-weight: Regular;
+  font-size: 24px;
+  text-align: center;
+}
+
+.trespontos {
+  width: 58px;
+  color: url("../images/v261_935.png");
+  position: absolute;
+  top: 642px;
+  left: 168px;
+  font-family: SF Pro Rounded;
+  font-weight: Regular;
+  font-size: 30px;
+  opacity: 1;
+  text-align: center;
+}

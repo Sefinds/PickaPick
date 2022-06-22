@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="../../manifest.json">
+  <script src="../../main.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../../stylegeral.css">
+  <link href="gamestyle.css" rel="stylesheet" />
+  <title>chooseop</title>
+</head>
+
+<body style="background: rgba(243, 177, 205, 1);">
+  <div class="wrapper-1">
+    <br>
+
+    <div class="wrapperitem-1">
+      <span class="text_rounded" style="font-weight: Semibold;font-size: 32px;color: rgba(255, 255, 255, 1);">2</span><br>
+      <button id="player2box" style="width: 60px;height: 60px;background: rgba(254, 217, 161, 1);border-radius: 32px;border: 4px solid rgba(255, 255, 255, 1);border-radius: 32px;">
+        <img src="" id="player2" alt="" style="max-width:100%; max-height:100%;">
+      </button>
+    </div>
+
+<br><br><br><br>
+
+    <div class="wrapperitem-1" style="display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;">
+      <div id="board">
+        <div data-index="1" class="tile right-border bottom-border"></div>
+        <div data-index="2" class="tile right-border bottom-border"></div>
+        <div data-index="3" class="tile bottom-border"></div>
+        <div data-index="4" class="tile right-border bottom-border"></div>
+        <div data-index="5" class="tile right-border bottom-border"></div>
+        <div data-index="6" class="tile bottom-border"></div>
+        <div data-index="7" class="tile right-border"></div>
+        <div data-index="8" class="tile right-border"></div>
+        <div data-index="9" class="tile"></div>
+        <div id="strike" class="strike"></div>
+      </div>
+    </div>
+
+<br><br><br><br>
+
+    <div class="wrapperitem-1">
+      <button id="profil-box" style="width: 60px;height: 60px;background: rgba(254, 217, 161, 1);border-radius: 32px;border: 4px solid rgba(255, 255, 255, 1);border-radius: 32px;">
+        <img src="" id="userimg" style="max-width:100%; max-height:100%;">
+      </button><br><span class="text_rounded" style="font-weight: Semibold;font-size: 32px;color: rgba(255, 255, 255, 1);">2</span>
+    </div>
+
+    <div id="game-over-area" class="hidden">
+      <h2 id="game-over-text">Winner is X</h2>
+      <button id="play-again">Play Again</button>
+    </div>
+
+  </div>
+
+  <script src="gamescript.js"></script>
+  <script src="../../firebase.js" type="module"></script>
+
+  <script type="module">
+    import {
+      auth,
+      user,
+      db
+    } from "../../firebase.js";
+    import {
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+    import {
+      collection,
+      addDoc,
+      doc,
+      setDoc,
+      updateDoc,
+      getDocs,
+      onSnapshot,
+      getDoc
+    } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
+
+
+
+    function myFunction() {
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          console.log('user logged');
+
+          const uid = user.uid;
+          const ref = doc(db, 'Users', uid);
+
+        } else {
+          console.log('User is signed out');
+        }
+      });
+
+      var user = JSON.parse(localStorage.getItem('users'));
+      document.getElementById("userimg").src = (user.pick);
+      document.getElementById('profil-box').style.backgroundColor = (user.pickcolor);
+      //document.getElementById('profil-box').style.borderColor = (user.pickborder);
+
+      var vs = JSON.parse(sessionStorage.getItem('VS'));
+      document.getElementById("player2").src = (vs.img);
+      document.getElementById('player2box').style.backgroundColor = (vs.imgcolor);
+
+    };
+    console.log(myFunction())
+    window.myFunction = myFunction;
+
+
+
+
+    document.getElementById("next").addEventListener('click', (e) => {
+
+window.location.href = "expli.html";
+            });
+
+  </script>
+
+</body>
+</html>
