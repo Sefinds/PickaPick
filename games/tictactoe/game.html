@@ -101,8 +101,8 @@
       });
 
       var user = JSON.parse(localStorage.getItem('users'));
-      document.getElementById("userimg").src = (user.pick);
-      document.getElementById('profil-box').style.backgroundColor = (user.pickcolor);
+      document.getElementById("userimg").src = (user.img);
+      document.getElementById('profil-box').style.backgroundColor = (user.pimgcolor);
       //document.getElementById('profil-box').style.borderColor = (user.pickborder);
 
       var vs = JSON.parse(sessionStorage.getItem('VS'));
