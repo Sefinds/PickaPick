@@ -223,9 +223,10 @@
 
     document.getElementById("letsgo").addEventListener('click', (e) => {
       var username = document.getElementById('username').value;
-      var img = sessionStorage.getItem('img');
-      var imgscolor = sessionStorage.getItem('imgcolor');
-      var bordercolors = sessionStorage.getItem('bordercolor');
+      var pick = JSON.parse(sessionStorage.getItem('pick'));
+      var img = (pick.img);
+      var imgcolor = (pick.imgcolor);
+      var bordercolor = (pick.bordercolor);
       console.log(username);
 
       onAuthStateChanged(auth, (user) => {
